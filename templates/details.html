@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Loan Application{% endblock %}
+
+{% block content %}
+<div class="form-page">
+    <div class="page-card">
+        <h2>Loan Application Details</h2>
+        {% if user %}
+            <p class="small-text">Logged in as {{ user.get('name') }} ({{ user.get('email') }})</p>
+        {% endif %}
+        <form method="POST" action="/details">
+            <div class="form-group">
+                <label for="user_name">Applicant Name</label>
+                <input type="text" id="user_name" name="user_name" placeholder="Enter full name" required>
+            </div>
+            <div class="form-group">
+                <label for="pan_card_number">PAN Card Number</label>
+                <input type="text" id="pan_card_number" name="pan_card_number" placeholder="Enter PAN number" required>
+            </div>
+            <div class="form-group">
+                <label for="credit_score">Credit Score</label>
+                <input type="number" id="credit_score" name="credit_score" placeholder="300 - 850" min="300" max="850" required>
+            </div>
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
