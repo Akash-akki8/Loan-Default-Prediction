@@ -2,3 +2,6 @@ Flask==2.3.2
 gunicorn==21.2.0
 pymongo==4.7.0
 bcrypt==4.0.1
+numpy
+pandas
+scikit-learn
